@@ -12,11 +12,13 @@ plugins {
 
 apply<pw.binom.KotlinConfigPlugin>()
 kotlin {
+    /*
     if (pw.binom.Target.ANDROID_JVM_SUPPORT) {
         android {
             publishAllLibraryVariants()
         }
     }
+
     jvm()
     linuxX64()
     linuxArm64()
@@ -45,6 +47,8 @@ kotlin {
         browser()
         nodejs()
     }
+    */
+    allTargets()
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -53,78 +57,16 @@ kotlin {
                 api("org.jetbrains.kotlinx:kotlinx-serialization-core:${pw.binom.Versions.KOTLINX_SERIALIZATION_VERSION}")
             }
         }
-        /*
-        val jvmLikeMain by creating {
-            dependsOn(commonMain)
-        }
-        val jvmMain by getting {
-            dependsOn(jvmLikeMain)
-        }
-        val nativeCommonMain by creating {
-            dependsOn(commonMain)
-        }
-        val nativeHostedMain by creating {
-            dependsOn(nativeCommonMain)
-        }
-
-        dependsOn("androidMain", jvmLikeMain)
-        dependsOn("linux*Main", nativeHostedMain)
-        dependsOn("mingw*Main", nativeHostedMain)
-        dependsOn("watchos*Main", nativeHostedMain)
-        dependsOn("macos*Main", nativeHostedMain)
-        dependsOn("ios*Main", nativeHostedMain)
-        dependsOn("androidNative*Main", nativeHostedMain)
-        dependsOn("wasm*Main", nativeCommonMain)
-*/
         val commonTest by getting {
             dependencies {
                 api(kotlin("test-common"))
                 api(kotlin("test-annotations-common"))
             }
         }
-        /*
-        val nativeTest by creating {
-            dependsOn(commonTest)
-        }
-        val jvmTest by getting {
-            dependsOn(commonTest)
-            dependencies {
-                api(kotlin("test"))
-            }
-        }
-        val linuxX64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        val mingwX64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        val jsTest by getting {
-            dependencies {
-                api(kotlin("test-js"))
-            }
-        }
-        */
         useDefault()
     }
 }
 
-fun makeTimeFile() {
-    val dateDir = file("$buildDir/tmp-date")
-    dateDir.mkdirs()
-    val tzFile = file("$dateDir/currentTZ")
-    tzFile.delete()
-    tzFile.writeText((TimeZone.getDefault().rawOffset / 1000 / 60).toString())
-}
-
-tasks {
-    withType(org.jetbrains.kotlin.gradle.tasks.KotlinTest::class).forEach {
-        it.doFirst {
-            makeTimeFile()
-        }
-    }
-}
 tasks.withType<Test> {
     this.testLogging {
         this.showStandardStreams = true

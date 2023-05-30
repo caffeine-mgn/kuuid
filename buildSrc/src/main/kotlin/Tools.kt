@@ -74,7 +74,7 @@ fun KotlinMultiplatformExtension.androidNative(func: KotlinNativeTarget.() -> Un
 fun KotlinMultiplatformExtension.allTargets(func: (TargetConfig.() -> Unit)) {
     val c = TargetConfig()
     presets.forEach {
-        if (it is AbstractKotlinNativeTargetPreset<*>) {
+        if (it is AbstractKotlinNativeTargetPreset<*> && it.konanTarget !in KonanTarget.deprecatedTargets) {
             c.nativeTargets += BuildTarget(it.konanTarget.name, it.name)
         }
     }
