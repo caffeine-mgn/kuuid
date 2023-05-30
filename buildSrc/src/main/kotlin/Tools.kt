@@ -80,8 +80,6 @@ fun KotlinMultiplatformExtension.allTargets(func: (TargetConfig.() -> Unit)) {
     }
     c.nativeTargets += BuildTarget("jvm", "jvm")
     c.nativeTargets += BuildTarget("js", "js")
-//    c.nativeTargets += BuildTarget("wasm", "wasm")
-//    c.nativeTargets += "wasm"
     if (pw.binom.Target.ANDROID_JVM_SUPPORT) {
         c.nativeTargets += BuildTarget("android", "android")
     }
