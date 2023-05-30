@@ -15,7 +15,7 @@ buildscript {
 
 allprojects {
     version = getExternalVersion()
-    group = "pw.binom.io"
+    group = "pw.binom"
 
     repositories {
         mavenLocal()
