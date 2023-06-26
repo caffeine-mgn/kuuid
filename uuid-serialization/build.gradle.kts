@@ -7,6 +7,7 @@ plugins {
     if (pw.binom.Target.ANDROID_JVM_SUPPORT) {
         id("com.android.library")
     }
+    id("kotlinx-serialization")
 }
 
 apply<pw.binom.KotlinConfigPlugin>()

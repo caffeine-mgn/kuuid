@@ -11,7 +11,7 @@ class UUID(val mostSigBits: Long, val leastSigBits: Long) {
         fun create(mostSigBits: Long, leastSigBits: Long) =
             UUID(
                 mostSigBits = mostSigBits,
-                leastSigBits = leastSigBits
+                leastSigBits = leastSigBits,
             )
 
         fun create(data: ByteArray, offset: Int = 0): UUID {
@@ -26,7 +26,7 @@ class UUID(val mostSigBits: Long, val leastSigBits: Long) {
             val leastSigBits = lsb
             return UUID(
                 mostSigBits = mostSigBits,
-                leastSigBits = leastSigBits
+                leastSigBits = leastSigBits,
             )
         }
 
@@ -61,7 +61,7 @@ class UUID(val mostSigBits: Long, val leastSigBits: Long) {
             leastSigBits = leastSigBits or (uuid.toLong(dash4 + 1, len, 16) and 0xffffffffffffL)
             return UUID(
                 mostSigBits = mostSigBits,
-                leastSigBits = leastSigBits
+                leastSigBits = leastSigBits,
             )
         }
     }

@@ -10,7 +10,6 @@ class UUIDTest {
         val s = UUID.random()
         val n = UUID.fromString(s.toString())
         assertEquals(s, n)
-        println("->\"$s\"   ${s.toShortString()}")
 
         val data = ByteArray(16)
         s.toByteArray(data)
