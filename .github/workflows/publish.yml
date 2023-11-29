@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       machine:
-        description: 'Machine to run on'     
+        description: 'Machine to run on'
         required: true
         default: 'ubuntu-latest'
 

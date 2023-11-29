@@ -8,7 +8,7 @@ class ConfigPublishPlugin : Plugin<Project> {
         target.plugins.apply(pw.binom.publish.plugins.PrepareProject::class.java)
         target.extensions.getByType(pw.binom.publish.plugins.PublicationPomInfoExtension::class.java).apply {
             useApache2License()
-            gitScm("https://github.com/caffeine-mgn/kuuid")
+            gitScm(PublishInfo.HTTP_PATH_TO_PROJECT)
             author(
                 id = "subochev",
                 name = "Anton Subochev",
