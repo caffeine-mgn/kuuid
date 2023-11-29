@@ -2,7 +2,7 @@ package pw.binom
 
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsCompilerType
 
-object Target {
+object Target2 {
     const val MINGW_X86_SUPPORT = false
     const val LINUX_ARM64_SUPPORT = false
     const val LINUX_ARM32HFP_SUPPORT = false

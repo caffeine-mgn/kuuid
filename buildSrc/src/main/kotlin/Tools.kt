@@ -33,16 +33,12 @@ fun KotlinMultiplatformExtension.allTargets() {
 }
 
 fun KotlinMultiplatformExtension.linux(func: KotlinNativeTarget.() -> Unit = {}) {
-    linuxArm32Hfp(func)
     linuxX64(func)
     linuxArm64(func)
-    linuxMips32(func)
-    linuxMipsel32(func)
 }
 
 fun KotlinMultiplatformExtension.watchos(func: KotlinNativeTarget.() -> Unit = {}) {
     watchosX64(func)
-    watchosX86(func)
     watchosArm32(func)
     watchosArm64(func)
     watchosSimulatorArm64(func)
@@ -51,7 +47,6 @@ fun KotlinMultiplatformExtension.watchos(func: KotlinNativeTarget.() -> Unit = {
 
 fun KotlinMultiplatformExtension.mingw(func: KotlinNativeTarget.() -> Unit = {}) {
     mingwX64(func)
-    mingwX86(func)
 }
 
 fun KotlinMultiplatformExtension.macos(func: KotlinNativeTarget.() -> Unit = {}) {
@@ -61,7 +56,6 @@ fun KotlinMultiplatformExtension.macos(func: KotlinNativeTarget.() -> Unit = {})
 
 fun KotlinMultiplatformExtension.ios(func: KotlinNativeTarget.() -> Unit = {}) {
     iosX64(func)
-    iosArm32(func)
     iosArm64(func)
     iosSimulatorArm64(func)
 }
@@ -89,7 +83,7 @@ fun KotlinMultiplatformExtension.allTargets(func: (TargetConfig.() -> Unit)) {
     }
     c.nativeTargets += BuildTarget("jvm", "jvm")
     c.nativeTargets += BuildTarget("js", "js")
-    if (pw.binom.Target.ANDROID_JVM_SUPPORT) {
+    if (pw.binom.Target2.ANDROID_JVM_SUPPORT) {
         c.nativeTargets += BuildTarget("android", "android")
     }
     func(c)
@@ -103,11 +97,11 @@ fun KotlinMultiplatformExtension.allTargets(func: (TargetConfig.() -> Unit)) {
 
             "js" -> js(KotlinJsCompilerType.IR) {
                 browser {
-                    testTask {
-                        useKarma {
-                            useFirefoxHeadless()
-                        }
-                    }
+//                    testTask {
+//                        useKarma {
+//                            useFirefoxHeadless()
+//                        }
+//                    }
                 }
                 nodejs()
             }

@@ -67,7 +67,9 @@ class UUID(val mostSigBits: Long, val leastSigBits: Long) {
     }
 
     /**
-     * Returns short ID with only first 8 bytes as HEX string
+     * Returns short ID with only first 8 bytes as HEX string.
+     *
+     * For example: if your uuid is `"f9d992e7-94f4-4697-88e7-099e580a6bc1"`, this method will return `"099e580a6bc1"`.
      *
      * @return first 8 bytes in HEX string
      */

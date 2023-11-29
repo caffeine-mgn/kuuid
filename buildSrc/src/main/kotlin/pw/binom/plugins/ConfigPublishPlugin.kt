@@ -12,7 +12,7 @@ class ConfigPublishPlugin : Plugin<Project> {
             author(
                 id = "subochev",
                 name = "Anton Subochev",
-                email = "caffeine.mgn@gmail.com"
+                email = "caffeine.mgn@gmail.com",
             )
         }
     }

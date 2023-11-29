@@ -10,6 +10,7 @@ import org.gradle.api.tasks.TaskAction
 
 class AndroidSupportPlugin : Plugin<Project> {
     override fun apply(target: Project) {
+        target.plugins.apply("com.android.library")
         val generateTask = target.tasks.registerTask("GenerateManifest", GenerateManifestTask::class.java)
         generateTask.configure {
             it.manifestFile.set(target.buildDir.resolve("androidManifest/AndroidManifest.xml"))

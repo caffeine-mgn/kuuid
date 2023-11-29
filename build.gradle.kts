@@ -1,5 +1,5 @@
 import pw.binom.publish.getExternalVersion
-
+/*
 buildscript {
     repositories {
         mavenCentral()
@@ -12,7 +12,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-serialization:${pw.binom.Versions.KOTLIN_VERSION}")
     }
 }
-
+*/
 allprojects {
     version = getExternalVersion()
     group = "pw.binom"
