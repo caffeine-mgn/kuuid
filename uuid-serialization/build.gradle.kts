@@ -1,5 +1,6 @@
 
-import pw.binom.publish.useDefault
+import pw.binom.publish.allTargets
+import pw.binom.publish.applyDefaultHierarchyBinomTemplate
 
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
@@ -14,6 +15,7 @@ if (pw.binom.Target2.ANDROID_JVM_SUPPORT) {
 apply<pw.binom.plugins.ConfigPublishPlugin>()
 kotlin {
     allTargets()
+    applyDefaultHierarchyBinomTemplate()
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -28,7 +30,7 @@ kotlin {
                 api(kotlin("test-annotations-common"))
             }
         }
-        useDefault()
+//        useDefault()
     }
 }
 

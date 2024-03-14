@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinJsCompilerType
 import org.jetbrains.kotlin.gradle.plugin.mpp.AbstractKotlinNativeTargetPreset
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.konan.target.KonanTarget
-
+/*
 internal class BuildTarget(val name: String, val preset: String)
 class TargetConfig {
     internal val nativeTargets = ArrayList<BuildTarget>()
@@ -120,3 +120,4 @@ fun KotlinMultiplatformExtension.allTargets(func: (TargetConfig.() -> Unit)) {
         }
     }
 }
+*/

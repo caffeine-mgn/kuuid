@@ -3,7 +3,7 @@ package pw.binom
 import org.gradle.api.NamedDomainObjectContainer
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import pw.binom.publish.dependsOn
-
+/*
 fun NamedDomainObjectContainer<KotlinSourceSet>.useDefault() {
     fun KotlinSourceSet.dp(other: KotlinSourceSet?): KotlinSourceSet {
         if (other != null) {
@@ -76,3 +76,4 @@ fun NamedDomainObjectContainer<KotlinSourceSet>.useDefault() {
         }
     }
 }
+*/
