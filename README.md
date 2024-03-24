@@ -9,8 +9,8 @@ Library UUID v4 implementation
 Add to your `build.gradle.kts` file new dependency:
 ```kotlin
 kotlin {
-    api("pw.binom:uuid:0.2") // uuid library
-    api("pw.binom:uuid-serialization:0.2") // serialization uuid library for kotlinx-serialization
+    api("pw.binom:uuid:0.0.6") // uuid library
+    api("pw.binom:uuid-serialization:0.0.6") // serialization uuid library for kotlinx-serialization
 }
 ```
 
@@ -19,7 +19,7 @@ kotlin {
 import pw.binom.uuid.UUID
 
 UUID.random() // generate random uuid
-UUID.create(data = byteArrayOf(....), offset = 0) // create from byte array
+UUID.create(data = byteArrayOf(/*bytes*/), offset = 0) // create from byte array
 UUID.create(mostSigBits = 10L, leastSigBits = 20L) // create from two longs
 UUID.fromString("f9d992e7-94f4-4697-88e7-099e580a6bc1") // create from string
 UUID.random().toByteArray() // convert uuid to byte array
