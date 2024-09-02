@@ -66,6 +66,9 @@ class UUID(val mostSigBits: Long, val leastSigBits: Long) {
         }
     }
 
+    val version
+        get() = ((mostSigBits shr 12) and 0x0f).toInt()
+
     /**
      * Returns short ID with only first 8 bytes as HEX string.
      *
