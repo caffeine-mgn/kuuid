@@ -9,8 +9,8 @@ Library UUID v4 implementation
 Add to your `build.gradle.kts` file new dependency:
 ```kotlin
 kotlin {
-    api("pw.binom:uuid:0.0.6") // uuid library
-    api("pw.binom:uuid-serialization:0.0.6") // serialization uuid library for kotlinx-serialization
+    api("pw.binom:uuid:0.0.7") // uuid library
+    api("pw.binom:uuid-serialization:0.0.7") // serialization uuid library for kotlinx-serialization
 }
 ```
 
