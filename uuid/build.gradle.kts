@@ -16,14 +16,9 @@ kotlin {
     applyDefaultHierarchyBinomTemplate()
     sourceSets {
         commonTest.dependencies {
+            api(kotlin("test"))
             api(kotlin("test-common"))
             api(kotlin("test-annotations-common"))
-        }
-        val commonTest by getting {
-            dependencies {
-                api(kotlin("test-common"))
-                api(kotlin("test-annotations-common"))
-            }
         }
     }
 }
