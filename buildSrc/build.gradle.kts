@@ -26,7 +26,7 @@ dependencies {
     api("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     api("org.jetbrains.dokka:dokka-gradle-plugin:1.8.10")
     api("com.bmuschko:gradle-docker-plugin:7.3.0")
-    api("pw.binom:binom-publish:0.1.21")
+    api("pw.binom:binom-publish:0.1.24")
 //    api("com.android.library:com.android.library.gradle.plugin:7.2.0")
     api("com.android.tools.build:gradle:4.2.1")
     api("com.google.gms:google-services:4.3.5")
