@@ -12,7 +12,10 @@ if (pw.binom.Target2.ANDROID_JVM_SUPPORT) {
     apply<pw.binom.plugins.AndroidSupportPlugin>()
 }
 kotlin {
-    allTargets()
+    allTargets{
+        -"wasmJs"
+    }
+    wasmJs()
     applyDefaultHierarchyBinomTemplate()
     sourceSets {
         commonTest.dependencies {

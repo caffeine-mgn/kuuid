@@ -15,7 +15,10 @@ if (pw.binom.Target2.ANDROID_JVM_SUPPORT) {
 }
 apply<pw.binom.plugins.ConfigPublishPlugin>()
 kotlin {
-    allTargets()
+    allTargets{
+        -"wasmJs"
+    }
+    wasmJs()
     applyDefaultHierarchyBinomTemplate()
     sourceSets {
         val commonMain by getting {
